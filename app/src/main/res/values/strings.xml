@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">moviesapp</string>
+    <string name="empty_screen_title_not_found_results">No results found</string>
+    <string name="empty_screen_description_no_results">No results found for: %1$s</string>
+    <string name="empty_screen_title_no_internet">No internet connection</string>
+    <string name="empty_screen_descripcion_no_internet">Please check your internet connection</string>
+    <string name="empty_screen_title_error_something_went_wrong">Oops!</string>
+    <string name="empty_screen_description_error_something_went_wrong">Something happened, please try again</string>
+    <string name="screen_empty_title_favorites">You dont have favorites</string>
+    <string name="screen_empty_description_favorites">Add movies to your favorites to watch here</string>
+
+
+
+    <!--
+   No se encontraron resultados - No results found
+No se encontraron resultados para: %1$s - No results found for
+Sin conexion a internet- No internet connection
+
+Por favor revisa tu conexion a internet - Please check your internet connection
+Algo pasó, por favor intenta de nuevo -Something happened, please try again
+No tienes favoritos - You don't have favorites
+Agrega películas a tus favoritos para verlas aquí - Add movies to your favorites to watch here
+    -->
+</resources>
