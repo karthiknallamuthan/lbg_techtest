@@ -103,7 +103,7 @@ dependencies {
 
     //compose
     //Navigation compose
-    def nav_version = "2.5.3"
+    def nav_version = "2.7.7"
     implementation("androidx.navigation:navigation-compose:$nav_version")
 
     //viewmodel compose

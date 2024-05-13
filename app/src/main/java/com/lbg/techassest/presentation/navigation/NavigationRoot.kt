@@ -32,10 +32,6 @@ fun RootNavigationGraph(navController: NavHostController = rememberNavController
             DashboardScreen()
         }
 
-        composable(route = Graph.DETAILS){
-           // DetailsMovieScreen()
-        }
-
     }
 }
 
