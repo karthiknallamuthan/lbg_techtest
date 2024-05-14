@@ -11,6 +11,7 @@ import org.mockito.Mock
 import org.mockito.MockitoAnnotations
 import org.mockito.junit.MockitoJUnitRunner
 
+
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
 class FavoritesViewModelTest {
