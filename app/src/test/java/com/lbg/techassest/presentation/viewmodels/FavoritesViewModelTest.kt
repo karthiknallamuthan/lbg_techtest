@@ -17,8 +17,6 @@ class FavoritesViewModelTest {
 
     @Mock
     lateinit var getFavoriteMoviesUseCase: GetFavoriteMoviesUseCase
-
-    // SUT -> System Under Test
     private lateinit var sut: FavoritesViewModel
 
     @Before

@@ -79,7 +79,6 @@ class FakeRepositoryErrorApi : IMoviesRepository {
     }
 
     override suspend fun deleteFavoriteMovie(id: Int) {
-        //throw Exception("Error")
     }
 
 }

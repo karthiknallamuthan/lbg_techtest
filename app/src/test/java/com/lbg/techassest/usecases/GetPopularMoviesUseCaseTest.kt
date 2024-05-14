@@ -12,15 +12,12 @@ import retrofit2.HttpException
 
 class GetPopularMoviesUseCaseTest {
 
-    // SUT -> System Under Test
     private lateinit var sut: GetPopularMoviesUseCase
     private lateinit var sutSuccess: GetPopularMoviesUseCase
 
-    // DOC -> Depedency of Component
     private lateinit var fakeRepositoryFailureApi: FakeRepositoryErrorApi
     private lateinit var fakeRepositorySuccessApi: FakeRepositorySuccessApi
 
-    //Save collect result
     private val listMovies = mutableListOf<MovieDomain>()
 
     @Before
@@ -34,9 +31,7 @@ class GetPopularMoviesUseCaseTest {
 
     @Test(expected = HttpException::class)
     fun `should return exception when network request is failed`() = runBlocking{
-        //Arrange
 
-        //Act
         val result = sut.invoke(
             api_key = "1234567890",
             language = "en",
@@ -54,9 +49,7 @@ class GetPopularMoviesUseCaseTest {
 
     @Test
     fun `should return success with list converted to domain when network request is success`() = runBlocking{
-        //Arrange
 
-        //Act
         val result = sutSuccess.invoke(
             api_key = "1234567890",
             language = "en",
@@ -64,11 +57,9 @@ class GetPopularMoviesUseCaseTest {
         )
 
         result.collect {
-            //Assert
             listMovies += it
         }
 
-        //Assert - Verify
         assert(listMovies.isNotEmpty())
     }
 

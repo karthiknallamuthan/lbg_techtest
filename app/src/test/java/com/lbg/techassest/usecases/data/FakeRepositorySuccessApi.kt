@@ -20,7 +20,7 @@ class FakeRepositorySuccessApi : IMoviesRepository {
         page: Int
     ): Flow<PopularsMovieResponse> {
         return flow {
-            delay(2.seconds) // Simulate network delay
+            delay(2.seconds)
             emit(popularResponseFake())
         }
     }
@@ -105,10 +105,8 @@ class FakeRepositorySuccessApi : IMoviesRepository {
     }
 
     override suspend fun insertFavoriteMovie(favoriteMoviesEntity: FavoriteMoviesEntity) {
-        // Do nothing
     }
 
     override suspend fun deleteFavoriteMovie(id: Int) {
-        // Do nothing
     }
 }

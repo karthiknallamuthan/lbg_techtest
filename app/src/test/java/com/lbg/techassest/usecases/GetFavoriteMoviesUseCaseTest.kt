@@ -21,15 +21,12 @@ class GetFavoriteMoviesUseCaseTest {
     @get:Rule
     val mainCoroutineScopeRule = MainCoroutineScopeRule()
 
-    // SUT -> System Under Test
     private lateinit var sut: GetFavoriteMoviesUseCase
     private lateinit var sutSuccess: GetFavoriteMoviesUseCase
 
-    // DOC -> Depedency of Component
     private lateinit var fakeMovieRepository: FakeRepositoryErrorApi
     private lateinit var fakeMovieRepositorySuccess: FakeRepositorySuccessApi
 
-    //Save collect result
     private val listResult = mutableListOf<List<FavoriteMoviesEntity>>()
 
     @Before
@@ -44,9 +41,7 @@ class GetFavoriteMoviesUseCaseTest {
 
     @Test
     fun `should return empty if not exist favorite movies`() {
-        //Arrange
 
-        //Act
         val result = sut.invoke()
 
         runBlocking {
@@ -55,15 +50,12 @@ class GetFavoriteMoviesUseCaseTest {
             }
         }
 
-        //Assert
         assertEquals(listResult[0].size, 0)
     }
 
     @Test
     fun `should return list of favorite movies`() {
-        //Arrange
 
-        //Act
         val result = sutSuccess.invoke()
 
         runBlocking {
@@ -72,7 +64,6 @@ class GetFavoriteMoviesUseCaseTest {
             }
         }
 
-        //Assert
         assertEquals(listResult[0].size, 1)
     }
 

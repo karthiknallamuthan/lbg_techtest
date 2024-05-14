@@ -11,7 +11,6 @@ class MainCoroutineScopeRule(
     val testDispatcher: TestCoroutineDispatcher = TestCoroutineDispatcher()
 ) : TestWatcher(), TestCoroutineScope by TestCoroutineScope(testDispatcher){
 
-    //start
     override fun starting(description: org.junit.runner.Description?) {
         super.starting(description)
         Dispatchers.setMain(testDispatcher)

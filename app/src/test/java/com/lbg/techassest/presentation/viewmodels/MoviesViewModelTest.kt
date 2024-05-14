@@ -35,7 +35,6 @@ class MoviesViewModelTest {
     lateinit var getPopularMoviesUseCase: GetPopularMoviesUseCase
     lateinit var searchMoviesUseCase: SearchMovieUseCase
 
-    // SUT -> System Under Test
     private lateinit var sut: MoviesViewModel
 
     private val listResult = mutableListOf<PopularMoviesResult>()
@@ -61,17 +60,14 @@ class MoviesViewModelTest {
 
     @Test
     fun `get popular movies should return different results emitted`() = mainCoroutineScopeRule.runBlockingTest {
-        // Arrange
         val scope = launch {
             sut.movies.collect(){
                 listResult.add(it)
             }
         }
 
-        // Act
         sut.getPopularMovies()
 
-        // Assert -> expected = actual
         val expected = listOf(
             PopularMoviesResult.Loading(true),
             PopularMoviesResult.Loading(false),
@@ -83,28 +79,20 @@ class MoviesViewModelTest {
 
     @Test
     fun `get popular test first emit should be loading`() = runTest {
-        // Arrange
         sut.movies.first(){
             listResult.add(it)
         }
-
-        // Act
         sut.getPopularMovies()
-
-        // Assert
         val expected = PopularMoviesResult.Loading(true)
         assertEquals(expected, listResult.first())
     }
 
     @Test
     fun `get popular normal test should return success`() = runTest {
-        // Arrange
         val list = sut.movies.take(2).toList()
 
-        // Act
         sut.getPopularMovies()
 
-        // Assert
         val expected = listOf(
             PopularMoviesResult.Loading(true),
             PopularMoviesResult.Success(FakeValueApi.listMovieEntityFake().toDomainModel()),
@@ -116,7 +104,6 @@ class MoviesViewModelTest {
     @After
     fun tearDown() {
         listResult.clear()
-        //kill the coroutine
         mainCoroutineScopeRule.coroutineContext.cancelChildren()
     }
 }
