@@ -78,8 +78,6 @@ fun BottomBarCustom(navController: NavHostController){
                         Text(text = screen.title, color = Color.White.copy(alpha = backgroundAlpha)) },
                     icon = { Icon(painterResource(id = screen.icon), contentDescription = screen.title, modifier = Modifier.graphicsLayer(alpha = backgroundAlpha)) },
                     selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true,
-                    //selectedContentColor = Color.White,
-                    //unselectedContentColor = LocalContentColor.current.copy(alpha = ContentAlpha.disabled),
                     onClick = {
                         navController.navigate(screen.route) {
                             popUpTo(navController.graph.findStartDestination().id) {

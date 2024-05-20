@@ -43,10 +43,6 @@ fun HorizontalMovieItem(
                 .align(CenterVertically)
                 .fillMaxWidth(0.3f),
                 shape = RoundedCornerShape(0.dp),
-                /*colors = CardDefaults.cardColors(
-                    containerColor = Color.Gray.copy(alpha = 0.5f),
-                    contentColor = Color.Gray.copy(alpha = 0.5f)
-                )*/
             ){
                 Column(
                     horizontalAlignment = CenterHorizontally,
